@@ -2,10 +2,10 @@ import pandas as pd
 
 
 class KumaSeries(object):
-    """To make IDE intellisense work well, functions are defined as classmethod and named with `kuma_` prefix.
+    """To make IDE intellisense work well, functions are defined as staticmethod and named with `kuma_` prefix.
     """
-    @classmethod
-    def kuma_apply(cls, data: pd.Series, func, **kwargs):
+    @staticmethod
+    def kuma_apply(data: pd.Series, func, **kwargs):
         return data.apply(func=func, **kwargs) if not data.empty else []
 
 
