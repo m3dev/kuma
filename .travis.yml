@@ -1,0 +1,11 @@
+language: python
+python: 3.6.7
+env:
+- BOTO_CONFIG=/dev/null
+install:
+- pip install --upgrade pip
+- pip install coverage
+script:
+- coverage run --include=kuma setup.py test
+after_success:
+- coveralls
